@@ -188,6 +188,16 @@ function displayPeople(people){
   }).join("\n"));
 }
 
+function displayFamilyInfo(foundPerson, relationship){
+  if(foundPerson.length < 1){
+    alert("This person has no " + relationship + ".");
+  }
+  else{
+  alert(foundPerson.map(function(person){
+   return relationship + ": " + person.firstName + " " + person.lastName;
+ }).join("\n"));
+}}
+
 function displayPerson(person){
   // print all of the information about a person:
   // height, weight, age, name, occupation, eye color.
