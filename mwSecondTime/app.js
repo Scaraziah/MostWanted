@@ -38,12 +38,21 @@ function mainMenu(person, people){
   switch(displayOption){
     case "info":
     // TODO: get person's info
+    displayPerson(person); 
+    mainMenu(person, people);
     break;
     case "family":
     // TODO: get person's family
+    displayParents(person,people);
+    displaySpouse(person, people);
+    displaySiblings(person,people);
+    mainMenu(person, people);
     break;
     case "descendants":
     // TODO: get person's descendants
+    displayDescendants(person, people);
+    displayPeople(arrDescen);
+    mainMenu(person, people);
     break;
     case "restart":
     app(people); // restart
