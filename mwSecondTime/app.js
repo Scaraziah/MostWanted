@@ -134,6 +134,20 @@ function searchByEyeColor(people){
   return foundPerson;
 }
 
+function searchByOccupation(people){
+  let occupation = promptFor("What is the person's occupation?", chars);
+  let foundPerson = people.filter(function(person){
+    if(person.occupation === occupation){
+      return true;
+    }
+    else{
+      return false;
+    }
+  })
+  // TODO: find the person using the trait they entered
+  return foundPerson;
+}
+
 // alerts a list of people
 function displayPeople(people){
   alert(people.map(function(person){
