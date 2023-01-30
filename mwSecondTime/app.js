@@ -80,6 +80,34 @@ function searchByName(people){
   return foundPerson;
 }
 
+function searchByGender(people){
+  let gender = promptFor("What is the person's gender?", chars).toLowerCase();
+  let foundPerson = people.filter(function(person){
+    if(person.gender === gender){
+      return true;
+    }
+    else{
+      return false;
+    }
+  })
+  // TODO: find the person using the trait they entered
+  return foundPerson;
+}
+
+function searchByHeight(people){
+  let height = promptFor("What is the person's height?", chars);
+  let foundPerson = people.filter(function(person){  
+    if(person.height == height){
+      return true;
+    }
+    else{
+      return false;
+    }
+  })
+  return foundPerson;
+}
+
+
 // alerts a list of people
 function displayPeople(people){
   alert(people.map(function(person){
@@ -92,8 +120,14 @@ function displayPerson(person){
   // height, weight, age, name, occupation, eye color.
   let personInfo = "First Name: " + person.firstName + "\n";
   personInfo += "Last Name: " + person.lastName + "\n";
+  personInfo += "Gender: " + person.gender + "\n";
+  personInfo += "Weight: " + person.weight + "\n";
+  personInfo += "Eye Color: " + person.eyeColor + "\n";
+  personInfo += "Height: " + person.height + "\n";
+  personInfo += "occupation: " + person.occupation + "\n";
   // TODO: finish getting the rest of the information to display
   alert(personInfo);
+
 }
 
 // function that prompts and validates user input
