@@ -107,6 +107,32 @@ function searchByHeight(people){
   return foundPerson;
 }
 
+function searchByWeight(people){
+  let weight = promptFor("What is the person's weight?", chars);
+  let foundPerson = people.filter(function(person){  
+    if(person.weight == weight){
+      return true;
+    }
+    else{
+      return false;
+    }
+  })
+  return foundPerson;
+}
+
+function searchByEyeColor(people){
+  let eyeColor = promptFor("What is the person's eye color?", chars);
+  let foundPerson = people.filter(function(person){
+    if(person.eyeColor === eyeColor){
+      return true;
+    }
+    else{
+      return false;
+    }
+  })
+  // TODO: find the person using the trait they entered
+  return foundPerson;
+}
 
 // alerts a list of people
 function displayPeople(people){
