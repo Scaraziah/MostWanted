@@ -148,6 +148,39 @@ function searchByOccupation(people){
   return foundPerson;
 }
 
+
+function searchByTrait(people){
+  let resultTrait = people;
+  do{
+    let searchTrait = promptFor('What trait would you like to search?\nGender\nWeight\nEye Color\nHeight\nOccupation',chars).toLowerCase();
+    switch(searchTrait){ 
+      case 'gender':
+      resultTrait = searchByGender(resultTrait);
+      displayPeople(resultTrait);
+        break;
+      case 'weight':
+        resultTrait =   searchByWeight(resultTrait);
+        displayPeople(resultTrait);
+        break;
+      case 'eye color':
+        resultTrait = searchByEyeColor(resultTrait);
+        displayPeople(resultTrait);
+        break;
+      case "height":
+        resultTrait = searchByHeight(resultTrait);
+        displayPeople(resultTrait);
+        break;  
+      case "occupation":
+        resultTrait = searchByOccupation(resultTrait);
+        displayPeople(resultTrait);
+        break;
+      default:
+    }
+  }
+  while(resultTrait.length > 1);
+  return resultTrait
+}
+
 // alerts a list of people
 function displayPeople(people){
   alert(people.map(function(person){
