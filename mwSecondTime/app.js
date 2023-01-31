@@ -242,17 +242,14 @@ function displayParents(person, people){
 function displayPerson(person){
   // print all of the information about a person:
   // height, weight, age, name, occupation, eye color.
-  let personInfoMap = new Map([
-    ["firstName", person.firstName],
-    ["Last Name", person.lastName]
-  ]);
-  let personInfo = `First Name: ${personInfoMap.get(firstName)} "\n"`;
-  personInfo += "Last Name: " + person.lastName + "\n";
-  personInfo += "Gender: " + person.gender + "\n";
-  personInfo += "Weight: " + person.weight + "\n";
-  personInfo += "Eye Color: " + person.eyeColor + "\n";
-  personInfo += "Height: " + person.height + "\n";
-  personInfo += "occupation: " + person.occupation + "\n";
+
+  let personInfo = "First Name " + person[0].firstName + "\n";
+  personInfo += "Last Name: " + person[0].lastName + "\n";
+  personInfo += "Gender: " + person[0].gender + "\n";
+  personInfo += "Weight: " + person[0].weight + "\n";
+  personInfo += "Eye Color: " + person[0].eyeColor + "\n";
+  personInfo += "Height: " + person[0].height + "\n";
+  personInfo += "occupation: " + person[0].occupation + "\n";
   // TODO: finish getting the rest of the information to display
   alert(personInfo);
 
