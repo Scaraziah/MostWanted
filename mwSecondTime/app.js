@@ -13,6 +13,7 @@ function app(people){
       break;
     case 'no':
       // TODO: search by traits
+      searchResults = searchByTrait(people);
       break;
       default:
     app(people); // restart app
