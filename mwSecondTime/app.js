@@ -198,10 +198,55 @@ function displayFamilyInfo(foundPerson, relationship){
  }).join("\n"));
 }}
 
+function displaySpouse(person, people){
+  let foundPerson = people.filter(function(el){
+    if(el.currentSpouse === person.id){
+      return true;
+    }
+    else{
+      return false;
+    }
+  })
+    displayFamilyInfo(foundPerson,"Spouse")
+}
+
+function displaySiblings(person, people){
+  let foundPerson = people.filter(function(el){
+  let parLength = el.parents
+    if(el.id === person.id)
+    return false;
+    else if(parLength.length < 2)
+      return false
+    else if(el.parents[0] === person.parents[0] || el.parents[0] === person.parents[1] || el.parents[1] === person.parents[0] || el.parents[1] === person.parents[1]){
+        return true;
+    }
+    else{
+      return false;
+    }
+  })
+    displayFamilyInfo(foundPerson,"Sibling")
+}
+
+function displayParents(person, people){
+  let foundPerson = people.filter(function(el){
+    if(el.id === person.parents[0] || el.id === person.parents[1]){
+      return true;
+    }
+    else{
+      return false;
+    }
+  })
+    displayFamilyInfo(foundPerson,"Parent")
+}
+
 function displayPerson(person){
   // print all of the information about a person:
   // height, weight, age, name, occupation, eye color.
-  let personInfo = "First Name: " + person.firstName + "\n";
+  let personInfoMap = new Map([
+    ["firstName", person.firstName],
+    ["Last Name", person.lastName]
+  ]);
+  let personInfo = `First Name: ${personInfoMap.get(firstName)} "\n"`;
   personInfo += "Last Name: " + person.lastName + "\n";
   personInfo += "Gender: " + person.gender + "\n";
   personInfo += "Weight: " + person.weight + "\n";

@@ -1,4 +1,6 @@
 "use strict"
+import data from data
+
 /*
 Build all of your functions for displaying and gathering information below (GUI).
 */
@@ -79,8 +81,6 @@ function searchByName(people){
   // TODO: find the person using the name they entered
   return foundPerson;
 }
-
-//Trait
 
 function searchByGender(people){
   let gender = promptFor("What is the person's gender?", chars).toLowerCase();
