@@ -230,7 +230,7 @@ function displaySiblings(person, people){
 
 function displayParents(person, people){
   let foundPerson = people.filter(function(el){
-    if(el.id === person.parents[0] || el.id === person.parents[1]){
+    if(el.id == person[0].parents[0] || el.id == person[0].parents[1]){
       return true;
     }
     else{
