@@ -218,7 +218,7 @@ function displaySiblings(person, people){
     return false;
     else if(parLength.length < 2)
       return false
-    else if(el.parents[0] === person.parents[0] || el.parents[0] === person.parents[1] || el.parents[1] === person.parents[0] || el.parents[1] === person.parents[1]){
+    else if(el.parents[0] === person[0].parents[0] || el.parents[0] === person[0].parents[1] || el.parents[1] === person[0].parents[0] || el.parents[1] === person[0].parents[1]){
         return true;
     }
     else{
