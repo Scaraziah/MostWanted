@@ -201,7 +201,7 @@ function displayFamilyInfo(foundPerson, relationship){
 
 function displaySpouse(person, people){
   let foundPerson = people.filter(function(el){
-    if(el.currentSpouse === person.id){
+    if(el.currentSpouse === person[0].id){
       return true;
     }
     else{
