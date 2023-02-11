@@ -214,11 +214,11 @@ function displaySpouse(person, people){
 function displaySiblings(person, people){
   let foundPerson = people.filter(function(el){
   let parLength = el.parents
-    // if(el.id === person[0].id)
-    // return false;
+    if(el.parent[0] === "")
+    return false;
     // else if(parLength.length < 2)
     //   return false
-    if(el.parents[0] === person[0].parents[0] || el.parents[0] === person[0].parents[1] || el.parents[1] === person[0].parents[0] || el.parents[1] === person[0].parents[1]){
+    else if(el.parents[0] === person[0].parents[0] || el.parents[0] === person[0].parents[1] || el.parents[1] === person[0].parents[0] || el.parents[1] === person[0].parents[1] && el.parents[0] !== "" && el.parent[1] !== ""){
         return true;
     }
     else{
