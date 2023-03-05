@@ -52,7 +52,7 @@ function mainMenu(person, people){
     case "descendants":
     // TODO: get person's descendants
     displayDescendants(person, people);
-    displayPeople(arrDescen);
+    // displayPeople(arrDescen);
     mainMenu(person, people);
     break;
     case "restart":
@@ -225,6 +225,16 @@ function displaySiblings(person, people){
     }
   })
     displayFamilyInfo(foundPerson,"Sibling")
+}
+ 
+function displayDescendants(person, people){
+  let foundPerson = people.filter(function(el){
+    if(el.parents[0] == undefined || el.id == person[0].id)
+      return false;
+      else if(el.id == person[0].parents[0] || el.id == person[0].parents[1])
+      return true;
+  })
+  displayFamilyInfo(foundPerson,"Descendants")
 }
 
 function displayParents(person, people){
