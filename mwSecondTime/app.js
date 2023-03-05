@@ -213,7 +213,7 @@ function displaySpouse(person, people){
 
 function displaySiblings(person, people){
   let foundPerson = people.filter(function(el){
-    if(el.parents[0] == undefined || el.id == person[0].id)
+    if(el.parents[0] == undefined || el.id == person[0].id || person[0].parents[0] == undefined)
 
       return false;
     else if(el.parents[0] === person[0].parents[0] || el.parents[0] === person[0].parents[1] 
